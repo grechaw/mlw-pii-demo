@@ -1,0 +1,18 @@
+{
+  "id" : "QLirVxN5M",
+  "customer" : {
+    "fullName" : "Camila Holder",
+    "company" : "Woods",
+    "email" : "camila.holder@woods.biz",
+    "ssn" : "484-54-0029"
+  },
+  "callStartTime" : "2017-12-03T21:12:23.834Z",
+  "callEndTime" : "2017-12-03T21:12:37.957Z",
+  "supportTech" : {
+    "fullName" : "Landon Travis",
+    "manager" : {
+      "fullName" : "Grace Hubbard",
+      "manager" : null
+    }
+  }
+}

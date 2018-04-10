@@ -1,0 +1,18 @@
+{
+  "id" : "F0D2D4tqI",
+  "customer" : {
+    "fullName" : "Jackson Hayes",
+    "company" : "Yrsa Inc.",
+    "email" : "jackson.hayes@yrsainc.com",
+    "ssn" : "777-16-447"
+  },
+  "callStartTime" : "2018-03-23T10:28:31.943Z",
+  "callEndTime" : "2018-03-23T10:28:58.341Z",
+  "supportTech" : {
+    "fullName" : "Carlos Morales",
+    "manager" : {
+      "fullName" : "Grace Hubbard",
+      "manager" : null
+    }
+  }
+}

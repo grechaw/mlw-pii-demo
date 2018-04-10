@@ -1,0 +1,18 @@
+{
+  "id" : "7MabpIW3H",
+  "customer" : {
+    "fullName" : "Nathan Callahan",
+    "company" : "Beans",
+    "email" : "nathan.callahan@beans.eu",
+    "ssn" : "441-23-0624"
+  },
+  "callStartTime" : "2018-02-02T19:42:16.643Z",
+  "callEndTime" : "2018-02-02T19:42:40.893Z",
+  "supportTech" : {
+    "fullName" : "Landon Travis",
+    "manager" : {
+      "fullName" : "Grace Hubbard",
+      "manager" : null
+    }
+  }
+}

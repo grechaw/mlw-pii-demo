@@ -1,0 +1,18 @@
+{
+  "id" : "l6TmXKwSp",
+  "customer" : {
+    "fullName" : "Lauren Alvarez",
+    "company" : "Quisuc",
+    "email" : "lauren.alvarez@quisuc.biz",
+    "ssn" : "031-60-0846"
+  },
+  "callStartTime" : "2017-11-16T02:32:37.721Z",
+  "callEndTime" : "2017-11-16T02:33:29.573Z",
+  "supportTech" : {
+    "fullName" : "Landon Travis",
+    "manager" : {
+      "fullName" : "Grace Hubbard",
+      "manager" : null
+    }
+  }
+}
