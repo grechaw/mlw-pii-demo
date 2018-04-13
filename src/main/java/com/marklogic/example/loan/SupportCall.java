@@ -1,4 +1,4 @@
-package com.marklogic.example.callcenter;
+package com.marklogic.example.loan;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -8,25 +8,37 @@ public class SupportCall {
 
     public static class Customer {
         public String fullName;
-        public String company;
 
-        // email is something all call center folks should see
+        // a company name
+        public String worksFor;
+
+        // email is something all clerks can see
         public String email;
-        // this info should be secured -- only manager (or amp?) can see.
+        // this info should be secured -- only compliance officer can see
         public String ssn;
     }
 
     public static class Employee {
         public String fullName;
-        public Employee manager;
     }
 
 
+    /**
+     * @id a unique generated identifier for the application
+     */
     public String id;
-    public Customer customer;
+
+    /**
+     * what happened during the call
+     */
+    public String description;
+
+    public Employee clerk;
+    // a call has an officer too, who is another employee
+    public Employee complianceOfficer;
+    public Customer caller;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     public Date callStartTime;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
     public Date callEndTime;
-    public Employee supportTech;
 }

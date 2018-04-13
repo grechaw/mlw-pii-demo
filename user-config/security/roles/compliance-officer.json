@@ -1,0 +1,10 @@
+{
+  "role-name": "compliance-officer",
+  "description": "A role for users who have clearance to see the entire customer record.",
+  "role": [
+      "harmonized-reader",
+      "pii-reader"
+  ],
+  "privilege": [
+  ]
+}

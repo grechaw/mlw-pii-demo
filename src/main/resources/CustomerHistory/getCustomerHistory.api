@@ -1,0 +1,8 @@
+{
+  "functionName": "getCustomerHistory",
+  "params": [
+    {"name": "customerName", "datatype": "string"}
+  ],
+  "return":
+  {"datatype": "jsonDocument"}
+}

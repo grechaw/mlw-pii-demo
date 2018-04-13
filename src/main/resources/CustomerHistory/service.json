@@ -1,0 +1,5 @@
+{
+    "endpointDirectory" : "/dbf/demo/history/",
+    "$javaClass"        : "com.marklogic.example.loan.LoanHistory"
+}
+
