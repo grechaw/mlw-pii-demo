@@ -1,0 +1,7 @@
+{
+  "user-name": "hub-admin",
+  "description": "User for managing extensions and running the data hub",
+  "password": "x",
+  "role": ["security", "manage-admin", "data-hub-role"]
+}
+

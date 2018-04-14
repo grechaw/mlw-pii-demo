@@ -1,0 +1,34 @@
+{
+  "info": {
+    "title": "Customer",
+    "version": "0.0.1",
+    "baseUri" : "http://example.org/supportcall/"
+  },
+  "definitions": {
+    "Customer" : {
+        "properties" : {
+            "fullName": {
+                "datatype": "string",
+              "description" : "The full name of a customer"
+            },
+            "worksFor": {
+                "datatype": "string",
+              "description" : "The company for whom the customer works."
+            },
+            "email": {
+                "datatype": "string",
+              "description" : "Customer's email address"
+            },
+            "ssn" : {
+                "datatype" : "string",
+              "description" : "The customer's social security number.  Must be visbile only to compliance officers."
+            }
+        },
+      "description" : "A customer",
+      "required" : ["fullName", "email","ssn"],
+      "wordLexicon":["firstName"],
+      "pii":[]
+    }
+  }
+}
+
