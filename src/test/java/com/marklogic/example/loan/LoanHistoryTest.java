@@ -38,11 +38,11 @@ public class LoanHistoryTest {
 
 
 
-        loanHistory = new LoanHistory(officerClient);
+        //loanHistory = new LoanHistory(officerClient);
 
-        history = loanHistory.getCustomerHistory("Carter");
-        assertEquals("Carter Schneider", history.get("envelope").get("instance").get("SupportCall").get("caller").get("Customer").get("fullName").asText());
-        new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(System.out, history);
+        //history = loanHistory.getCustomerHistory("Carter");
+        //assertEquals("Carter Schneider", history.get("envelope").get("instance").get("SupportCall").get("caller").get("Customer").get("fullName").asText());
+        //new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(System.out, history);
     }
 
 }
