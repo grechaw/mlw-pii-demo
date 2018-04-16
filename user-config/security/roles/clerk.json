@@ -2,7 +2,8 @@
   "role-name": "clerk",
   "description": "A role that each clerk has.  A reader of final data, but shouldn't see ssns.",
   "role": [
-    "harmonized-reader"
+    "harmonized-reader",
+    "rest-extension-user"
   ],
   "privilege": [
   ]

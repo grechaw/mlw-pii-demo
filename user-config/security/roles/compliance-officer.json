@@ -3,7 +3,8 @@
   "description": "A role for users who have clearance to see the entire customer record.",
   "role": [
       "harmonized-reader",
-      "pii-reader"
+      "pii-reader",
+      "rest-extension-user"
   ],
   "privilege": [
   ]

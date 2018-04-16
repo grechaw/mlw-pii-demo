@@ -40,7 +40,6 @@ function createContent(id, options) {
  */
 function extractInstanceSupportCall(source) {
   // the original source documents
-  let attachments = source;
 
   let id = xs.string(source.id);
   let description = xs.string(source.description);
@@ -79,16 +78,15 @@ function extractInstanceSupportCall(source) {
 
   // return the instance object
   return {
-    '$attachments': attachments,
-    '$type': 'SupportCall',
-    '$version': '0.0.1',
-    'id': id,
-    'description': description,
-    'caller': caller,
-    'callStartTime': callStartTime,
-    'callEndTime': callEndTime,
-    'clerk': clerk,
-    'complianceOfficer': complianceOfficer
+      "SupportCall" : {
+         'id': id,
+         'description': description,
+         'caller': caller,
+         'callStartTime': callStartTime,
+         'callEndTime': callEndTime,
+         'clerk': clerk,
+         'complianceOfficer': complianceOfficer
+    }
   }
 };
   
@@ -101,7 +99,6 @@ function extractInstanceSupportCall(source) {
  */
 function extractInstanceCustomer(source) {
   // the original source documents
-  let attachments = source;
 
   let fullName = xs.string(source.fullName);
   let worksFor = xs.string(source.worksFor);
@@ -110,12 +107,12 @@ function extractInstanceCustomer(source) {
 
   // return the instance object
   return {
-    '$type': 'Customer',
-    '$version': '0.0.1',
-    'fullName': fullName,
-    'worksFor': worksFor,
-    'email': email,
-    'ssn': ssn
+    'Customer' : {
+        'fullName': fullName,
+        'worksFor': worksFor,
+        'email': email,
+        'ssn': ssn
+    }
   }
 };
   
@@ -128,15 +125,14 @@ function extractInstanceCustomer(source) {
  */
 function extractInstanceEmployee(source) {
   // the original source documents
-  let attachments = source;
 
   let fullName = xs.string(source.fullName);
 
   // return the instance object
   return {
-    '$type': 'Employee',
-    '$version': '0.0.1',
-    'fullName': fullName
+    'Employee' : {
+        'fullName': fullName
+    }
   }
 };
   

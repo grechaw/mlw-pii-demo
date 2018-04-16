@@ -1,0 +1,14 @@
+{
+  "server-name": "api-first-server",
+  "server-type": "http",
+  "root": "/",
+  "group-name": "Default",
+  "port": "8015",
+  "modules-database": "%%mlModulesDbName%%",
+  "content-database": "%%mlFinalDbName%%",
+  "authentication": "%%mlFinalAuth%%",
+  "default-error-format": "json",
+  "error-handler": "/MarkLogic/rest-api/error-handler.xqy",
+  "url-rewriter": "",
+  "rewrite-resolves-globally": true
+}
