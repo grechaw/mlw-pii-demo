@@ -27,8 +27,7 @@
       "description" : "A customer",
       "required" : ["fullName", "email","ssn"],
       "wordLexicon":["firstName"],
-      "pii":["ssn"]
-
+      "pii":[]
     }
   }
 }
