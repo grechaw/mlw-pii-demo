@@ -1,18 +1,55 @@
-pii demo
+PII demo
 
 2018-04-10 made first test data
 
-creating entities:
+Creating entities:
 
-./gradlew hubCreateEntity -PentityName=SupportCall
+`./gradlew hubCreateEntity -PentityName=SupportCall`
 
-this just makes an empty directory... so im gonna make the entity services model for my support call
-
-
-
-got users and roles set up
-
-support-technican, support-manager
+This just makes an empty directory... so i'm gonna make the entity services
+model for my support call
 
 
-now changing to the hub-admin user i made for further deployments:
+
+Got users and roles set up
+
+support-technician, support-manager
+
+
+How changing to the hub-admin user i made for further deployments:
+
+
+The script:
+
+
+* I'm a MarkLogic developer for a bank, 
+
+
+I've just been given this story:
+
+As a clerk ... I need to ... see customer history data.
+
+But not PII
+
+When I bring up customer history, I should see the entire document associated with a support call, but not the customer's PII
+
+As a compliance officer, I need to verify that an applicant's ssn is correct.
+
+
+Task list:
+
+Givens:
+
+* A test data set (OK to see PII in test data)
+* Provide getCustomerHistory(name) to Java Developers
+* Implement database function
+* Verify database function
+* Define the roles
+
+demo:
+
+* Implement PII
+* Deploy PII configuration to Server
+* Verify PII
+
+
