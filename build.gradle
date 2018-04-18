@@ -57,6 +57,12 @@ task loadTestData(type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 }
 
+task getCustomerHistory(type: JavaExec) {
+    main = 'com.marklogic.example.loan.LoanHistoryTest'
+    args = [project.property('role'), project.property('name')]
+    classpath = sourceSets.test.runtimeClasspath
+}
+
 compileKotlin {
     kotlinOptions {
         jvmTarget = "1.8"

@@ -53,3 +53,16 @@ demo:
 * Verify PII
 
 
+
+
+
+steps:
+
+
+1. ./gradlew test
+2. look at log
+3. edit Customer.entity.json
+4. ./gradlew mlLoadModules
+5. ./gradlew generatePii
+6. ./gradlew test
+7. look at log.

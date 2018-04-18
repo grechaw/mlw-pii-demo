@@ -4,7 +4,14 @@
 
   <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
-      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+      <pattern>%msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>test-run.log</file>
+    <encoder>
+      <pattern>%msg%n</pattern>
     </encoder>
   </appender>
 
@@ -18,6 +25,10 @@
 
   <logger name="com.marklogic.hub" level="WARN" additivity="false">
     <appender-ref ref="STDOUT" />
+  </logger>
+
+  <logger name="com.marklogic.example" level="INFO" additivity="false">
+    <appender-ref ref="FILE" />
   </logger>
 
 </configuration>
