@@ -61,7 +61,7 @@ public class LoanHistoryTest {
         } else {
             throw new RuntimeException("Role must be 'clerk' or 'officer'");
         }
-        return loanHistory.getCustomerHistory("Carter");
+        return loanHistory.getCustomerHistory(name);
     }
 
     public static void main(String[] args) throws IOException {

@@ -4,7 +4,7 @@ mavenLocal()
     maven {url 'http://developer.marklogic.com/maven2/'}
   }
   dependencies {
-    classpath 'com.marklogic:ml-data-hub:3.0-S'
+    classpath 'com.marklogic:ml-data-hub:3.0-T'
   }
 }
 
@@ -39,7 +39,7 @@ mavenLocal()
 dependencies {
     // this allows you to write custom java code that depends
     // on the Data Hub Framework library
-    compile 'com.marklogic:marklogic-data-hub:3.0-S'
+    compile 'com.marklogic:marklogic-data-hub:3.0-T'
     compile 'com.marklogic:marklogic-xcc:9.0.4'
     compile 'com.marklogic:marklogic-client-api:4.0.3.1'
     // prototyping with kotlin tests
@@ -58,18 +58,10 @@ task loadTestData(type: JavaExec) {
 }
 
 task getCustomerHistory(type: JavaExec) {
-    if(project.hasProperty("role")) {
-        ext.role = project.property('role')
-    } else {
-        ext.role = "clerk"
-    }
-    if (project.hasProperty("name")) {
-        ext.name = project.property('name')
-    } else {
-        ext.name = "Carter"
-    }
+    ext.role = project.findProperty('role') ?: 'clerk'
+    ext.customerName = project.findProperty('customerName') ?: ''
     main = 'com.marklogic.example.loan.LoanHistoryTest'
-    args = [ext.role, ext.name]
+    args = [ext.role, ext.customerName]
     classpath = sourceSets.test.runtimeClasspath
 }
 

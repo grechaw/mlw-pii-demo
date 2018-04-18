@@ -8,9 +8,9 @@
       <search:element ns="http://marklogic.com/entity-services" name="title"/>
     </search:value>
   </search:constraint>
-  <search:constraint name="firstName">
+  <search:constraint name="fullName">
     <search:word>
-      <search:element ns="" name="firstName"/>
+      <search:element ns="" name="fullName"/>
     </search:word>
   </search:constraint>
   <search:constraint name="id">
