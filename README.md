@@ -1,29 +1,18 @@
 PII demo
+--------
 
-2018-04-10 made first test data
+## Setup before running demo:
 
-Creating entities:
+1.  have MarkLogic on localhost
+1.  ensure this project is clean and matches repo
+1.  if anything doesn't work, undeploy hub to clean up completely.
+1.  run quick-start and navigate to this directory for your project
+1.  look at, admire the entities (don't modify tho)
+1.  look at, admire, and run both the ingest and the harmonize flows.
 
-`./gradlew hubCreateEntity -PentityName=SupportCall`
-
-This just makes an empty directory... so i'm gonna make the entity services
-model for my support call
-
-
-
-Got users and roles set up
-
-support-technician, support-manager
-
-
-How changing to the hub-admin user i made for further deployments:
-
-
-The script:
-
+## The script:
 
 * I'm a MarkLogic developer for a bank, 
-
 
 I've just been given this story:
 
@@ -36,9 +25,8 @@ When I bring up customer history, I should see the entire document associated wi
 As a compliance officer, I need to verify that an applicant's ssn is correct.
 
 
-Task list:
-
 Givens:
+-------
 
 * A test data set (OK to see PII in test data)
 * Provide getCustomerHistory(name) to Java Developers
@@ -46,23 +34,28 @@ Givens:
 * Verify database function
 * Define the roles
 
-demo:
+
+Demo:
+-----
 
 * Implement PII
 * Deploy PII configuration to Server
 * Verify PII
 
 
-
-
-
 steps:
 
 
-1. ./gradlew test
-2. look at log
-3. edit Customer.entity.json
-4. ./gradlew mlLoadModules
-5. ./gradlew generatePii
-6. ./gradlew test
-7. look at log.
+1. ./gradlew getCustomerHistory -Pname=Carter -Prole=officer
+1. edit Customer.entity.json
+1. ./gradlew mlLoadModules
+1. ./gradlew generatePii
+1. ./gradlew getCustomerHistory -Pname=Carter -Prole=officer
+1. ./gradlew getCustomerHistory -Pname=Carter -Prole=clerk
+
+TODO:
+1. ./gradlew getCustomerHistory -Pssn=xxx -Prole=clerk
+1. ./gradlew getCustomerHistory -Pssn=xxx -Prole=officer
+
+Note that there is no 'ssn' in the search result for clerk.
+Note that clerk cannot search by ssn

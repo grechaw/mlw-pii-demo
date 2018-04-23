@@ -1,9 +1,9 @@
 {
   "Customer" : {
     "x" : 272,
-    "y" : 69,
-    "width" : 350,
-    "height" : 130,
+    "y" : 68,
+    "width" : 362,
+    "height" : 291,
     "vertices" : { }
   },
   "Employee" : {
