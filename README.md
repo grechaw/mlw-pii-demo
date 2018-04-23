@@ -46,12 +46,13 @@ Demo:
 steps:
 
 
-1. ./gradlew getCustomerHistory -Pname=Carter -Prole=officer
-1. edit Customer.entity.json
+1. ./gradlew getCustomerHistory -PcustomerName=Carter -Prole=officer
+1. edit Customer.entity.json    edit the "pii" property to include ssn.
 1. ./gradlew mlLoadModules
 1. ./gradlew generatePii
-1. ./gradlew getCustomerHistory -Pname=Carter -Prole=officer
-1. ./gradlew getCustomerHistory -Pname=Carter -Prole=clerk
+1. ./gradlew mlDeploySecurity
+1. ./gradlew getCustomerHistory -PcustomerName=Carter -Prole=officer
+1. ./gradlew getCustomerHistory -PcustomerName=Carter -Prole=clerk
 
 TODO:
 1. ./gradlew getCustomerHistory -Pssn=xxx -Prole=clerk
