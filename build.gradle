@@ -52,11 +52,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-task loadTestData(type: JavaExec) {
-    main = 'com.marklogic.example.loan.TestDataLoader'
-    classpath = sourceSets.main.runtimeClasspath
-}
-
 task getCustomerHistory(type: JavaExec) {
     ext.role = project.findProperty('role') ?: 'clerk'
     ext.customerName = project.findProperty('customerName') ?: ''
