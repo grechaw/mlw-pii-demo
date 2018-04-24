@@ -54,9 +54,10 @@ dependencies {
 
 task getCustomerHistory(type: JavaExec) {
     ext.role = project.findProperty('role') ?: 'clerk'
-    ext.customerName = project.findProperty('customerName') ?: ''
+    ext.customerName = project.findProperty('customerName') ?: 'noFileAtAll'
+    ext.ssn = project.findProperty('ssn') ?: ''
     main = 'com.marklogic.example.loan.LoanHistoryTest'
-    args = [ext.role, ext.customerName]
+    args = [ext.role, ext.customerName, ext.ssn]
     classpath = sourceSets.test.runtimeClasspath
 }
 

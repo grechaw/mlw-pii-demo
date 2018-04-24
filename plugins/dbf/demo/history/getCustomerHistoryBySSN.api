@@ -1,0 +1,8 @@
+{
+  "functionName": "getCustomerHistoryBySSN",
+  "params": [
+    {"name": "ssn", "datatype": "string"}
+  ],
+  "return":
+  {"datatype": "jsonDocument"}
+}

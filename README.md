@@ -45,18 +45,19 @@ Demo:
 
 steps:
 
+All tasks to be run from this folder.
 
 1. ./gradlew getCustomerHistory -PcustomerName=Carter -Prole=officer
 1. edit Customer.entity.json    edit the "pii" property to include ssn.
 1. ./gradlew mlLoadModules
-1. ./gradlew generatePii
+1. ./gradlew hubGeneratePii
 1. ./gradlew mlDeploySecurity
 1. ./gradlew getCustomerHistory -PcustomerName=Carter -Prole=officer
 1. ./gradlew getCustomerHistory -PcustomerName=Carter -Prole=clerk
 
 TODO:
-1. ./gradlew getCustomerHistory -Pssn=xxx -Prole=clerk
-1. ./gradlew getCustomerHistory -Pssn=xxx -Prole=officer
+1. ./gradlew getCustomerHistory -Pssn=228-80-9858 -Prole=clerk
+1. ./gradlew getCustomerHistory -Pssn=228-80-9858 -Prole=officer
 
 Note that there is no 'ssn' in the search result for clerk.
 Note that clerk cannot search by ssn

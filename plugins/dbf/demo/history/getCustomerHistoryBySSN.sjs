@@ -2,12 +2,11 @@
 
 const es = require("/MarkLogic/entity-services/entity-services.xqy");
 
-const name = xdmp.getRequestField("customerName");
+const ssn = xdmp.getRequestField("ssn");
 
-
-xdmp.log("Name passed in as " + name);
+xdmp.log("SSN passed in as " + ssn);
 xdmp.setResponseContentType("application/json");
-var results = cts.search(cts.jsonPropertyScopeQuery("Customer", cts.jsonPropertyWordQuery("fullName", name)));
+var results = cts.search(cts.jsonPropertyScopeQuery("Customer", cts.jsonPropertyValueQuery("ssn", ssn)));
 var jsonResult;
 if (fn.head(results)) {
     jsonResult = es.instanceJsonFromDocument(fn.head(results));

@@ -28,8 +28,23 @@ public class LoanHistory extends DBFunctionBase {
                 urlencodedParams(
                         paramEncoded("customerName", false, customerName)
                 ), Format.JSON), Format.JSON, false);
-        return mapper.readValue(reader, ObjectNode.class);
+        try {
+            return mapper.readValue(reader, ObjectNode.class);
+        } catch (IOException e) {
+            return null;
+        }
     }
 
 
+    public ObjectNode getCustomerHistoryBySSN(String ssn) {
+        Reader reader = asReader(postForDocument("/dbf/demo/history/getCustomerHistoryBySSN.sjs",
+                urlencodedParams(
+                        paramEncoded("ssn", false, ssn)
+                ), Format.JSON), Format.JSON, false);
+        try {
+            return mapper.readValue(reader, ObjectNode.class);
+        } catch (IOException e) {
+            return null;
+        }
+    }
 }
