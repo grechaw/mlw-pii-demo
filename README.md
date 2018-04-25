@@ -54,10 +54,8 @@ All tasks to be run from this folder.
 1. ./gradlew mlDeploySecurity
 1. ./gradlew getCustomerHistory -PcustomerName=Carter -Prole=officer
 1. ./gradlew getCustomerHistory -PcustomerName=Carter -Prole=clerk
-
-TODO:
-1. ./gradlew getCustomerHistory -Pssn=228-80-9858 -Prole=clerk
-1. ./gradlew getCustomerHistory -Pssn=228-80-9858 -Prole=officer
+1. ./gradlew getCustomerHistoryBySSN -Pssn=228-80-9858 -Prole=clerk
+1. ./gradlew getCustomerHistoryBySSN -Pssn=228-80-9858 -Prole=officer
 
 Note that there is no 'ssn' in the search result for clerk.
 Note that clerk cannot search by ssn

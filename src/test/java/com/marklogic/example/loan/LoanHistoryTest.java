@@ -18,35 +18,10 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
-public class LoanHistoryTest {
+public class LoanHistoryTest extends LoanTestBase {
 
-    LoanHistory loanHistory;
     private static Logger logger = LoggerFactory.getLogger(LoanHistoryTest.class);
 
-    DatabaseClient clerkClient, officerClient;
-    static ObjectWriter writer = new ObjectMapper().writerWithDefaultPrettyPrinter();
-
-    public LoanHistoryTest() {
-        clerkClient = DatabaseClientFactory.newClient("localhost",8015,new DatabaseClientFactory.DigestAuthContext("SydneyGardner", "x"));
-        officerClient = DatabaseClientFactory.newClient("localhost",8015, new DatabaseClientFactory.DigestAuthContext("GiannaEmerson", "x"));
-    }
-
-    @Test
-    public void testHistoryBySsn() throws IOException {
-        HubConfig hubConfig = HubConfigBuilder.newHubConfigBuilder(".").withPropertiesFromEnvironment().build();
-        loanHistory = new LoanHistory(clerkClient);
-
-        logger.info("Calling getCustomerHistoryBySSN as clerk");
-        ObjectNode history = getCustomerHistoryBySSN("clerk", "307-63-428");
-        assertEquals(0, history.size());
-
-        loanHistory = new LoanHistory(officerClient);
-
-        logger.info("Calling getCustomerHistoryBySSN as compliance officer.");
-        history = getCustomerHistoryBySSN("officer", "307-63-428");
-        assertEquals("Molly Horn", history.get("fullName").asText());
-        logger.info(writer.writeValueAsString(history));
-    }
 
     @Test
     public void testHistoryReturns() throws IOException {
@@ -81,37 +56,15 @@ public class LoanHistoryTest {
         return loanHistory.getCustomerHistory(name);
     }
 
-    public ObjectNode getCustomerHistoryBySSN(String role, String ssn) throws IOException {
-        LoanHistory loanHistory;
-        if (role.equals("clerk")) {
-            loanHistory = new LoanHistory(clerkClient);
-        }
-        else if (role.equals("officer")) {
-            loanHistory = new LoanHistory(officerClient);
-        } else {
-            throw new RuntimeException("Role must be 'clerk' or 'officer'");
-        }
-        return loanHistory.getCustomerHistoryBySSN(ssn);
-    }
-
     public static void main(String[] args) throws IOException {
         String role = args[0];
-        String ssn = null;
-        String customerName = null;
+        String customerName = "None";
         if (args.length > 1) {
             customerName = args[1];
         }
-        if (args.length > 2) {
-            ssn = args[2];
-        }
-        logger.info("Called main with customerName " + customerName + " and ssn " + ssn);
-        LoanHistoryTest tester = new LoanHistoryTest();
-        if (ssn != null) {
-            System.out.println(writer.writeValueAsString(tester.getCustomerHistoryBySSN(role, ssn)));
-        }
-        else {
-            System.out.println(writer.writeValueAsString(tester.getCustomerHistory(role, customerName)));
-        }
+        logger.info("Called main with customerName " + customerName);
+        LoanHistoryTest  tester = new LoanHistoryTest();
+        System.out.println(writer.writeValueAsString(tester.getCustomerHistory(role, customerName)));
     }
 
 }

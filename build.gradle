@@ -54,10 +54,17 @@ dependencies {
 
 task getCustomerHistory(type: JavaExec) {
     ext.role = project.findProperty('role') ?: 'clerk'
-    ext.customerName = project.findProperty('customerName') ?: 'noFileAtAll'
-    ext.ssn = project.findProperty('ssn') ?: ''
+    ext.customerName = project.findProperty('customerName') ?: 'noOne'
     main = 'com.marklogic.example.loan.LoanHistoryTest'
-    args = [ext.role, ext.customerName, ext.ssn]
+    args = [ext.role, ext.customerName]
+    classpath = sourceSets.test.runtimeClasspath
+}
+
+task getCustomerHistoryBySSN(type: JavaExec) {
+    ext.role = project.findProperty('role') ?: 'clerk'
+    ext.ssn = project.findProperty('ssn') ?: 'none'
+    main = 'com.marklogic.example.loan.LoanHistoryBySSNTest'
+    args = [ext.role, ext.ssn]
     classpath = sourceSets.test.runtimeClasspath
 }
 
