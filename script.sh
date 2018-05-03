@@ -16,3 +16,5 @@ vim user-config/security/roles/clerk.json
 
 ./gradlew -q getCustomerHistory -PcustomerName=Carter -Prole=clerk
 ./gradlew -q getCustomerHistory -PcustomerName=Carter -Prole=officer
+./gradlew getCustomerHistoryBySSN -Pssn=228-80-9858 -Prole=clerk
+./gradlew getCustomerHistoryBySSN -Pssn=228-80-9858 -Prole=officer
