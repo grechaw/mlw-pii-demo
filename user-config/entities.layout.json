@@ -1,21 +1,21 @@
 {
   "Customer" : {
-    "x" : 272,
-    "y" : 68,
+    "x" : 497,
+    "y" : 81,
     "width" : 362,
     "height" : 291,
     "vertices" : { }
   },
   "Employee" : {
-    "x" : 398,
-    "y" : 498,
+    "x" : 59,
+    "y" : 519,
     "width" : 350,
     "height" : 52,
     "vertices" : { }
   },
   "SupportCall" : {
-    "x" : 821,
-    "y" : 130,
+    "x" : 165,
+    "y" : 139,
     "width" : 350,
     "height" : 208,
     "vertices" : { }

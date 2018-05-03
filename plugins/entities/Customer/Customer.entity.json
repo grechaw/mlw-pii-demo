@@ -8,7 +8,7 @@
     "Customer" : {
       "description" : "A customer",
       "required" : [ "fullName", "email", "ssn" ],
-      "pii" : [ "ssn" ],
+      "pii" : [ ],
       "elementRangeIndex" : [ ],
       "rangeIndex" : [ ],
       "wordLexicon" : [ "fullName" ],

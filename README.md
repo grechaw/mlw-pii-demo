@@ -48,6 +48,8 @@ steps:
 All tasks to be run from this folder.
 
 1. ./gradlew getCustomerHistory -PcustomerName=Carter -Prole=officer
+1. ./gradlew getCustomerHistory -PcustomerName=Carter -Prole=clerk
+         nothing here... clerk does not have harmonized reader yet.
 1. edit Customer.entity.json    edit the "pii" property to include ssn.
 1. ./gradlew mlLoadModules
 1. ./gradlew hubGeneratePii
